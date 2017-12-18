@@ -1,0 +1,60 @@
+.cont {
+    text-align: right;
+    margin: 0 13vw;
+}
+button {
+    box-sizing: content-box;
+    padding: .5vw;
+    margin: 1vw;
+    width: 10vw;
+    outline: none;
+    border-radius: 1vw;
+}
+input {
+    margin: 2vw 2vw 2vw 0;
+    padding: 5px;
+    height: 2vw;
+    width: 30vw;
+    font-size: 2vw;
+}
+.btns {
+    text-align: center;
+}
+#newUrl {
+    margin-top: 3vw;
+    padding: 1vw;
+    color: rgb(236, 97, 16);
+    text-align: center;
+    font-size: 2vw;
+    font-weight: bold;
+    word-break: break-all;
+    box-shadow: 1.5px 1.5px 1px 1px #616060;
+}
+.changeHref_btn {
+    display: inline-block;
+    margin: 2vw;
+    width: 8vw;
+    height: 3vw;
+    line-height: 3vw;
+    border: 1px solid #616060;
+    border-radius: .8vw;
+    cursor: pointer;
+}
+.changeHref_btn:hover {
+    animation: trb .1s ease-in;
+}
+@keyframes trb {
+    0% { 
+        transform: scale(1.2)
+    }
+    50% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(.8)
+    }
+}
+.changeHref {
+    text-align: center;
+    margin-top: 1vw;
+}
