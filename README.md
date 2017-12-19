@@ -2,25 +2,6 @@
 
 ## 项目需求
 * 对 url 链接中的汉字和参数进行替换
-1.
-机蜜首页：https://h5.jimistore.com/#/tab/lease
-输入参数：channelName（渠道名）
-输出：https://h5.jimistore.com/?channelName=${channelName}#/tab/lease
-
-2.
-商品专区：
-输入参数：专区ID，专区名称，渠道名
-输出：https://h5.jimistore.com/?channelName=${channelName}#/tab/typeList/${专区id}/${专区名称}
-
-3.
-商品详情：
-输入参数：商品ID，渠道名
-输出：https://h5.jimistore.com/?channelName=${channelName}#/tab/leaseChoose/${商品ID}/
-
-4.
-活动：
-输入参数：活动链接，渠道名
-输出：${活动链接}?channelName=${channelName}
 
 ## 技术栈
 
@@ -142,3 +123,29 @@ babel-preset-react
 
 4. copy-to-clipboard
 > 点击复制到剪贴板插件
+
+## 项目挖坑大全
+### 关于 react-router-dom（我只能说，我的心好痛，调了3天没找到问题）
+* 引入和使用
+```
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+
+ReactDOM.render(
+  <Router>
+    <App>
+          <Route path="/" exact component={Home} />
+          <Route path="/goods" component={Goods} />
+          <Route path="/detail" component={Detail} />
+          <Route path="/active" component={Active} />
+    </App>
+  </Router>  
+  ,
+  document.getElementById('app')
+)
+
+在父级 APP 中记得加入 this.props.children
+```
+> 路由渲染不要带着DOM一起渲染，如果可以将 router 单独作为一个组件处理，本例稍简单，并未分离出去
+
+### 关于图片打包
+神坑啊！设置的时候是将 8K 以内的图片打包后转为 base64，所以并看不到 img 文件夹生成。。。而我判断打包成功的标准就是是否生成 img 文件夹
